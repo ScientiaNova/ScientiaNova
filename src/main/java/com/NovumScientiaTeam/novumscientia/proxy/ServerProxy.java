@@ -14,4 +14,9 @@ public class ServerProxy implements IModProxy {
     public void process(InterModProcessEvent interModProcessEvent) {
 
     }
+
+    @Override
+    public void init() {
+
+    }
 }

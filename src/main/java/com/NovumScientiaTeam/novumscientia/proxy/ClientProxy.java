@@ -14,4 +14,9 @@ public class ClientProxy implements IModProxy {
     public void process(InterModProcessEvent interModProcessEvent) {
 
     }
+
+    @Override
+    public void init() {
+
+    }
 }

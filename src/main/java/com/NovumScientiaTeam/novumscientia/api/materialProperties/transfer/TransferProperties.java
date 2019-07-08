@@ -1,4 +1,4 @@
-package com.NovumScientiaTeam.novumscientia.api.materialProperties;
+package com.NovumScientiaTeam.novumscientia.api.materialProperties.transfer;
 
 public class TransferProperties {
     private int capacity;

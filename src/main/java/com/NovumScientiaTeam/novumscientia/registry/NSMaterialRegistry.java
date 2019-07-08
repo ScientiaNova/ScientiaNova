@@ -4,14 +4,14 @@ import com.EmosewaPixel.pixellib.materialSystem.MaterialRegistry;
 
 public class NSMaterialRegistry {
     //Material Tags
-    public static String DECOMPOSITION_BY_ELECTROLYZING = "electrolyzable";
-    public static String DECOMPOSITION_BY_CENTRIFUGING = "centrifugable";
-    public static String DISABLE_FACTORYCOMPONENTS = "disable_factory_components";
-    public static String NOT_REACTIVE = "not_reactive";
+    public static final String DECOMPOSABLE = "decomposable";
+    public static final String DISABLE_FACTORY_COMPONENTS = "disable_factory_components";
+    public static final String NOT_REACTIVE = "not_reactive";
+    public static final String SUPER_ORE = "super_ore";
 
     static {
-        MaterialRegistry.BRICK.addTags(DISABLE_FACTORYCOMPONENTS);
-        MaterialRegistry.NETHER_BRICK.addTags(DISABLE_FACTORYCOMPONENTS);
+        MaterialRegistry.BRICK.addTags(DISABLE_FACTORY_COMPONENTS);
+        MaterialRegistry.NETHER_BRICK.addTags(DISABLE_FACTORY_COMPONENTS);
         MaterialRegistry.DIAMOND.addTags(NOT_REACTIVE);
     }
 }

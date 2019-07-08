@@ -52,7 +52,7 @@ minecraft {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${mc_version}-26.0.42"
+    minecraft "net.minecraftforge:forge:${mc_version}-27.0.25"
     compile files("libs/pixellib-${mc_version}-${lib_version}-deobf.jar")
     compile files("libs/formulatooltips-${mc_version}-${tooltips_version}-deobf.jar")
 }
