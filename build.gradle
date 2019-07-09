@@ -19,7 +19,7 @@ archivesBaseName = 'novumscientia'
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
 minecraft {
-    mappings channel: 'snapshot', version: '20190622-1.14.2'
+    mappings channel: 'snapshot', version: '20190709-1.14.3'
     runs {
         client {
             workingDirectory project.file('run')
@@ -51,10 +51,23 @@ minecraft {
     }
 }
 
+repositories {
+    maven {
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.k-4u.nl"
+    }
+}
+
 dependencies {
-    minecraft "net.minecraftforge:forge:${mc_version}-27.0.25"
+    minecraft "net.minecraftforge:forge:${mc_version}-27.0.43"
     compile files("libs/pixellib-${mc_version}-${lib_version}-deobf.jar")
     compile files("libs/formulatooltips-${mc_version}-${tooltips_version}-deobf.jar")
+    compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
+    compile fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
 }
 
 jar {
