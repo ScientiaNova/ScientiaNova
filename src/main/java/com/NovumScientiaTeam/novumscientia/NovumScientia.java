@@ -39,6 +39,6 @@ public class NovumScientia {
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
-
+        
     }
 }

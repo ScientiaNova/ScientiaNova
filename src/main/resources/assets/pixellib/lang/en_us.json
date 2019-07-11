@@ -1,26 +1,41 @@
 {
   "material.hydrogen": "Hydrogen",
   "material.hydrogen_gas": "Hydrogen Gas",
+  "material.deuterium": "Deuterium",
+  "material.deuterium_gas": "Deuterium Gas",
+  "material.tritium": "Tritium",
+  "material.tritium_gas": "Tritium Gas",
   "material.helium": "Helium",
-
+  "material.helium_3": "Helium-3",
   "material.lithium": "Lithium",
+
 
   "material.oxygen": "Oxygen",
   "material.oxygen_gas": "Oxygen Gas",
 
+
   "material.aluminium": "Aluminium",
   "material.silicon": "Silicon",
-
+  "material.phosphorus": "Phosphorus",
   "material.sulfur": "Sulfur",
 
+  "material.copper": "Copper",
 
   "material.sulfur_dioxide": "Sulfur Dioxide",
+  "material.silicon_monoxide": "Silicon Monoxide",
 
 
   "material.hydroxide": "Hydroxide",
   "material.sulfate": "Sulfate",
+  "material.phosphate": "Phosphate",
+  "material.metasilicate": "Metasilicate",
 
 
   "material.magnetite": "Magnetite",
+  "material.hematite": "Hematite",
+  "material.pyrite": "Pyrite",
+  "material.chalcopyrite": "Chalcopyrite",
+  "material.chalcocite": "Chalcocite",
+  "material.cuprite": "Cuprite",
   "material.kaolinite": "Kaolinite"
 }
