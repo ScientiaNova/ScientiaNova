@@ -1,9 +1,9 @@
 package com.NovumScientiaTeam.novumscientia.api.machineTiers;
 
 
-import com.EmosewaPixel.pixellib.materialSystem.materials.Material;
+import com.EmosewaPixel.pixellib.materialsystem.materials.Material;
 
-public class MachineTier extends com.EmosewaPixel.pixellib.machineTiers.MachineTier {
+public class MachineTier extends com.EmosewaPixel.pixellib.machinetiers.MachineTier {
     private int energyPerTick;
     private Material mainMaterial; //The Material used for the casing
     private Material conductorMaterial; //The material that the cables of which are used in recipes

@@ -1,6 +1,6 @@
 package com.NovumScientiaTeam.novumscientia.api.materialProperties.transfer;
 
-import com.EmosewaPixel.pixellib.materialSystem.materials.Material;
+import com.EmosewaPixel.pixellib.materialsystem.materials.Material;
 
 import java.util.HashMap;
 import java.util.Map;

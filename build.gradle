@@ -63,7 +63,7 @@ repositories {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${mc_version}-27.0.43"
+    minecraft "net.minecraftforge:forge:${mc_version}-27.0.50"
     compile files("libs/pixellib-${mc_version}-${lib_version}-deobf.jar")
     compile files("libs/formulatooltips-${mc_version}-${tooltips_version}-deobf.jar")
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")

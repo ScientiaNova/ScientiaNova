@@ -1,0 +1,26 @@
+{
+  "material.hydrogen": "Hydrogen",
+  "material.hydrogen_gas": "Hydrogen Gas",
+  "material.helium": "Helium",
+
+  "material.lithium": "Lithium",
+
+  "material.oxygen": "Oxygen",
+  "material.oxygen_gas": "Oxygen Gas",
+
+  "material.aluminium": "Aluminium",
+  "material.silicon": "Silicon",
+
+  "material.sulfur": "Sulfur",
+
+
+  "material.sulfur_dioxide": "Sulfur Dioxide",
+
+
+  "material.hydroxide": "Hydroxide",
+  "material.sulfate": "Sulfate",
+
+
+  "material.magnetite": "Magnetite",
+  "material.kaolinite": "Kaolinite"
+}
