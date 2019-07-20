@@ -16,7 +16,7 @@ public class NSMaterialRegistry {
     public static final String IS_ACID = "is_acid";
 
     //Element Materials
-    public static Material HYDROGEN, HYDROGEN_GAS, DEUTERIUM, DEUTERIUM_GAS, TRITIUM, TRITIUM_GAS, HELIUM, HELIUM_3, LITHIUM, BERYLLIUM, BORON, CARBON, NITROGEN, NITROGEN_GAS, OXYGEN, OXYGEN_GAS, FLUORINE, FLUORINE_GAS, NEON, SODIUDM, MAGNESIUM, ALUMINIUM, SILICON, PHOSPHORUS, SULFUR, CHLORINE, CHLORINE_GAS, ARGON, POTASSIUM, CALCIUM, SCANDIUM, TITANIUM, VANADIUM, CHROMIUM, MANGANESE, COBALT, NICKEL, COPPER, ZINC, GALLIUM, GERMANIUM, ARSENIC, BROMINE, BROMINE_GAS, KRYPTON;
+    public static Material HYDROGEN, HYDROGEN_GAS, DEUTERIUM, DEUTERIUM_GAS, TRITIUM, TRITIUM_GAS, HELIUM, HELIUM_3, LITHIUM, BERYLLIUM, BORON, CARBON, NITROGEN, NITROGEN_GAS, OXYGEN, OXYGEN_GAS, FLUORINE, FLUORINE_GAS, NEON, SODIUM, MAGNESIUM, ALUMINIUM, SILICON, PHOSPHORUS, SULFUR, CHLORINE, CHLORINE_GAS, ARGON, POTASSIUM, CALCIUM, SCANDIUM, TITANIUM, VANADIUM, CHROMIUM, MANGANESE, COBALT, NICKEL, COPPER, ZINC, GALLIUM, GERMANIUM, ARSENIC, BROMINE, BROMINE_GAS, KRYPTON;
 
     //Compound Materials
     public static Material SULFUR_DIOXIDE, SILICON_MONOXIDE;
@@ -41,11 +41,18 @@ public class NSMaterialRegistry {
         HELIUM = new FluidMaterial("helium", TRANSPARENT_FLUID, 0xeebe21).addTags(IS_GAS).setElement(Elements.HELIUM).build();
         HELIUM_3 = new FluidMaterial("helium_3", TRANSPARENT_FLUID, 0xf60d0b).addTags(IS_GAS).setElement(Elements.HELIUM_3).build();
         LITHIUM = new IngotMaterial("lithium", REGULAR, 0xa9afac, 1).setElement(Elements.LITHIUM).setMeltingTemperature(453).setBoilingTemperature(1603).build();
-
-
+//        BERYLLIUM = new
+        BORON = new IngotMaterial("boron", SHINY, 0x727272, 1).setElement(Elements.BORON).setMeltingTemperature(2349).setBoilingTemperature(4200).build();
+        CARBON = new IngotMaterial("carbon", REGULAR, 0x474747 , 1).setElement(Elements.CARBON).setMeltingTemperature(3915).setBoilingTemperature(3915).build();
+        NITROGEN = new TransitionMaterial("nitrogen", () -> NITROGEN_GAS, 2).setElement(Elements.NITROGEN).build();
+        NITROGEN_GAS = new FluidMaterial("nitrogen_gas", TRANSPARENT_FLUID, 0x8f8fff).addTags(IS_GAS).setElement(Elements.NITROGEN).build();
         OXYGEN = new TransitionMaterial("oxygen", () -> OXYGEN_GAS, 2).setElement(Elements.OXYGEN).build();
         OXYGEN_GAS = new FluidMaterial("oxygen_gas", TRANSPARENT_FLUID, 0x56badd).addTags(IS_GAS).setComposition(new MaterialStack(OXYGEN, 2)).build();
-
+        FLUORINE = new TransitionMaterial("fluorine", () -> FLUORINE_GAS, 2).setElement(Elements.FLUORINE).build();
+        FLUORINE_GAS = new FluidMaterial("fluorine_gas", OPAQUE_FLUID, 0xdee67f).addTags(IS_GAS).setElement(Elements.FLUORINE).build();
+        NEON = new FluidMaterial("neon", TRANSPARENT_FLUID, 0xb3e3f5).addTags(IS_GAS).setElement(Elements.NEON).build();
+        SODIUM = new IngotMaterial("sodium", SHINY, 0x525252, 1).setElement(Elements.SODIUM).setMeltingTemperature(371).setBoilingTemperature(1156).build();
+        MAGNESIUM = new IngotMaterial("magnesium", SHINY, 0x8a8a8a,1).setElement(Elements.MAGNESIUM).setMeltingTemperature(923).setBoilingTemperature(1363).build();
         ALUMINIUM = new IngotMaterial("aluminium", REGULAR, 0x96a4b0, 1).setSecondName("aluminum").setElement(Elements.ALUMINUM).setMeltingTemperature(933).setBoilingTemperature(2743).build();
         SILICON = new IngotMaterial("silicon", REGULAR, 0x121315, 1).setElement(Elements.SILICON).setMeltingTemperature(1687).setBoilingTemperature(3538).build();
         PHOSPHORUS = new DustMaterial("phosphorus", FINE, 0xf50b0b, 1).setElement(Elements.PHOSPHORUS).build();
