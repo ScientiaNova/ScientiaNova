@@ -1,6 +1,6 @@
-package com.NovumScientiaTeam.novumscientia.proxy;
+package com.novumscientiateam.novumscientia.proxy;
 
-import com.EmosewaPixel.pixellib.proxy.IModProxy;
+import com.emosewapixel.pixellib.proxy.IModProxy;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 
