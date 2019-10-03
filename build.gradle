@@ -72,7 +72,7 @@ configurations {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:$mc_version-28.0.100"
+    minecraft "net.minecraftforge:forge:$mc_version-28.1.0"
     compile files("libs/pixellib-$mc_version-$lib_version-deobf.jar")
     compile files("libs/formulatooltips-$mc_version-$tooltips_version-deobf.jar")
     compileOnly fg.deobf("mezz.jei:jei-$mc_version:$jei_version:api")

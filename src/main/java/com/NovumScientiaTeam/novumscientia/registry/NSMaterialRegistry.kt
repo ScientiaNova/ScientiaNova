@@ -14,11 +14,12 @@ object NSMaterialRegistry {
     const val DISABLE_FACTORY_COMPONENTS = "disable_factory_components"
     const val NOT_REACTIVE = "not_reactive"
     const val SUPER_ORE = "super_ore"
-    const val IS_ACID = "is_acid"
 
     //Element Materials
     @JvmField
-    val HYDROGEN: Material
+    val HYDROGEN = transitionMaterial("hydrogen", { HYDROGEN_GAS!! }, 2) {
+        element = Elements.HYDROGEN
+    }
     @JvmField
     var HYDROGEN_GAS: Material? = null
     @JvmField
@@ -151,32 +152,29 @@ object NSMaterialRegistry {
 
 
     init {
-        HYDROGEN = transitionMaterial("hydrogen", { HYDROGEN_GAS!! }, 2) {
-            element = Elements.HYDROGEN
-        }
-        HYDROGEN_GAS = fluidMaterial("hydrogen_gas", MaterialRegistry.TRANSPARENT_FLUID, 0x31219e) {
+        HYDROGEN_GAS = fluidMaterial("hydrogen_gas", MaterialRegistry.FLUID_TT, 0x31219e) {
             materialTags += IS_GAS
             composition = listOf(MaterialStack(HYDROGEN, 2))
         }
         DEUTERIUM = transitionMaterial("deuterium", { DEUTERIUM_GAS!! }, 2) {
             element = Elements.DEUTERIUM
         }
-        DEUTERIUM_GAS = fluidMaterial("deuterium_gas", MaterialRegistry.TRANSPARENT_FLUID, 0xfffdbf) {
+        DEUTERIUM_GAS = fluidMaterial("deuterium_gas", MaterialRegistry.FLUID_TT, 0xfffdbf) {
             materialTags += IS_GAS
             composition = listOf(MaterialStack(DEUTERIUM, 2))
         }
         TRITIUM = transitionMaterial("tritium", { TRITIUM_GAS!! }, 2) {
             element = Elements.DEUTERIUM
         }
-        TRITIUM_GAS = fluidMaterial("tritium_gas", MaterialRegistry.TRANSPARENT_FLUID, 0xfffc9e) {
+        TRITIUM_GAS = fluidMaterial("tritium_gas", MaterialRegistry.FLUID_TT, 0xfffc9e) {
             materialTags += IS_GAS
             composition = listOf(MaterialStack(TRITIUM, 2))
         }
-        HELIUM = fluidMaterial("helium", MaterialRegistry.TRANSPARENT_FLUID, 0xeebe21) {
+        HELIUM = fluidMaterial("helium", MaterialRegistry.FLUID_TT, 0xeebe21) {
             materialTags += IS_GAS
             element = Elements.HELIUM
         }
-        HELIUM_3 = fluidMaterial("helium_3", MaterialRegistry.TRANSPARENT_FLUID, 0xf60d0b) {
+        HELIUM_3 = fluidMaterial("helium_3", MaterialRegistry.FLUID_TT, 0xf60d0b) {
             materialTags += IS_GAS
             element = Elements.HELIUM_3
         }
@@ -199,25 +197,25 @@ object NSMaterialRegistry {
         NITROGEN = transitionMaterial("nitrogen", { NITROGEN_GAS!! }, 2) {
             element = Elements.NITROGEN
         }
-        NITROGEN_GAS = fluidMaterial("nitrogen_gas", MaterialRegistry.TRANSPARENT_FLUID, 0x8f8fff) {
+        NITROGEN_GAS = fluidMaterial("nitrogen_gas", MaterialRegistry.FLUID_TT, 0x8f8fff) {
             materialTags += IS_GAS
             element = Elements.NITROGEN
         }
         OXYGEN = transitionMaterial("oxygen", { OXYGEN_GAS!! }, 2) {
             element = Elements.OXYGEN
         }
-        OXYGEN_GAS = fluidMaterial("oxygen_gas", MaterialRegistry.TRANSPARENT_FLUID, 0x56badd) {
+        OXYGEN_GAS = fluidMaterial("oxygen_gas", MaterialRegistry.FLUID_TT, 0x56badd) {
             materialTags += IS_GAS
             composition = listOf(MaterialStack(OXYGEN, 2))
         }
         FLUORINE = transitionMaterial("fluorine", { FLUORINE_GAS!! }, 2) {
             element = Elements.FLUORINE
         }
-        FLUORINE_GAS = fluidMaterial("fluorine_gas", MaterialRegistry.OPAQUE_FLUID, 0xdee67f) {
+        FLUORINE_GAS = fluidMaterial("fluorine_gas", MaterialRegistry.FLUID_TT, 0xdee67f) {
             materialTags += IS_GAS
             element = Elements.FLUORINE
         }
-        NEON = fluidMaterial("neon", MaterialRegistry.TRANSPARENT_FLUID, 0xb3e3f5) {
+        NEON = fluidMaterial("neon", MaterialRegistry.FLUID_TT, 0xb3e3f5) {
             materialTags += IS_GAS
             element = Elements.NEON
         }
@@ -256,7 +254,7 @@ object NSMaterialRegistry {
         }
 
 
-        SULFUR_DIOXIDE = fluidMaterial("sulfur_dioxide", MaterialRegistry.TRANSPARENT_FLUID, 0xf8d34d) {
+        SULFUR_DIOXIDE = fluidMaterial("sulfur_dioxide", MaterialRegistry.FLUID_TT, 0xf8d34d) {
             materialTags += listOf(IS_GAS, DECOMPOSABLE)
             composition = listOf(MaterialStack(SULFUR), MaterialStack(OXYGEN_GAS!!))
         }
@@ -267,7 +265,7 @@ object NSMaterialRegistry {
 
 
         HYDROXIDE = groupMaterial("hydroxide") {
-            composition = listOf(MaterialStack(HYDROGEN), MaterialStack(OXYGEN))
+            composition = listOf(MaterialStack(OXYGEN), MaterialStack(HYDROGEN))
         }
         SULFATE = groupMaterial("sulfate") {
             composition = listOf(MaterialStack(SULFUR_DIOXIDE), MaterialStack(OXYGEN_GAS!!))
@@ -318,20 +316,10 @@ object NSMaterialRegistry {
         }
 
 
-        MaterialRegistry.BRICK {
-            materialTags += DISABLE_FACTORY_COMPONENTS
-        }
-        MaterialRegistry.NETHER_BRICK {
-            materialTags += DISABLE_FACTORY_COMPONENTS
-        }
-        MaterialRegistry.DIAMOND {
-            materialTags += NOT_REACTIVE
-        }
-        MaterialRegistry.WATER {
-            composition = listOf(MaterialStack(HYDROGEN_GAS!!), MaterialStack(OXYGEN))
-        }
-        MaterialRegistry.QUARTZ {
-            composition = listOf(MaterialStack(SILICON), MaterialStack(OXYGEN_GAS!!))
-        }
+        MaterialRegistry.BRICK.materialTags += DISABLE_FACTORY_COMPONENTS
+        MaterialRegistry.NETHER_BRICK.materialTags += DISABLE_FACTORY_COMPONENTS
+        MaterialRegistry.DIAMOND.materialTags += NOT_REACTIVE
+        MaterialRegistry.WATER.composition = listOf(MaterialStack(HYDROGEN_GAS!!), MaterialStack(OXYGEN))
+        MaterialRegistry.QUARTZ.composition = listOf(MaterialStack(SILICON), MaterialStack(OXYGEN_GAS!!))
     }
 }
