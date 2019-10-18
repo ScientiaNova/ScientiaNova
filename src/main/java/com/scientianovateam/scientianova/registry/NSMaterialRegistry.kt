@@ -1,13 +1,14 @@
-package com.novumscientiateam.novumscientia.registry
+package com.scientianovateam.scientianova.registry
 
-import com.emosewapixel.pixellib.materialsystem.*
-import com.emosewapixel.pixellib.materialsystem.MaterialRegistry.HAS_ORE
-import com.emosewapixel.pixellib.materialsystem.MaterialRegistry.IS_GAS
-import com.emosewapixel.pixellib.materialsystem.element.Elements
+import com.emosewapixel.pixellib.materialsystem.addition.*
+import com.emosewapixel.pixellib.materialsystem.addition.MaterialRegistry.HAS_ORE
+import com.emosewapixel.pixellib.materialsystem.addition.MaterialRegistry.IS_GAS
+import com.emosewapixel.pixellib.materialsystem.elements.ElementRegistry
 import com.emosewapixel.pixellib.materialsystem.materials.IngotMaterial
 import com.emosewapixel.pixellib.materialsystem.materials.Material
 import com.emosewapixel.pixellib.materialsystem.materials.utility.MaterialStack
 
+@MaterialRegistryClass
 object NSMaterialRegistry {
     //Material Tags
     const val DECOMPOSABLE = "decomposable"
@@ -17,9 +18,7 @@ object NSMaterialRegistry {
 
     //Element Materials
     @JvmField
-    val HYDROGEN = transitionMaterial("hydrogen", { HYDROGEN_GAS!! }, 2) {
-        element = Elements.HYDROGEN
-    }
+    val HYDROGEN: Material
     @JvmField
     var HYDROGEN_GAS: Material? = null
     @JvmField
@@ -152,19 +151,23 @@ object NSMaterialRegistry {
 
 
     init {
+        HYDROGEN = transitionMaterial("hydrogen", { HYDROGEN_GAS!! }, 2) {
+            element = ElementRegistry.HYDROGEN
+        }
+
         HYDROGEN_GAS = fluidMaterial("hydrogen_gas", MaterialRegistry.FLUID_TT, 0x31219e) {
             materialTags += IS_GAS
             composition = listOf(MaterialStack(HYDROGEN, 2))
         }
         DEUTERIUM = transitionMaterial("deuterium", { DEUTERIUM_GAS!! }, 2) {
-            element = Elements.DEUTERIUM
+            element = ElementRegistry.DEUTERIUM
         }
         DEUTERIUM_GAS = fluidMaterial("deuterium_gas", MaterialRegistry.FLUID_TT, 0xfffdbf) {
             materialTags += IS_GAS
             composition = listOf(MaterialStack(DEUTERIUM, 2))
         }
         TRITIUM = transitionMaterial("tritium", { TRITIUM_GAS!! }, 2) {
-            element = Elements.DEUTERIUM
+            element = ElementRegistry.DEUTERIUM
         }
         TRITIUM_GAS = fluidMaterial("tritium_gas", MaterialRegistry.FLUID_TT, 0xfffc9e) {
             materialTags += IS_GAS
@@ -172,83 +175,83 @@ object NSMaterialRegistry {
         }
         HELIUM = fluidMaterial("helium", MaterialRegistry.FLUID_TT, 0xeebe21) {
             materialTags += IS_GAS
-            element = Elements.HELIUM
+            element = ElementRegistry.HELIUM
         }
         HELIUM_3 = fluidMaterial("helium_3", MaterialRegistry.FLUID_TT, 0xf60d0b) {
             materialTags += IS_GAS
-            element = Elements.HELIUM_3
+            element = ElementRegistry.HELIUM_3
         }
         LITHIUM = ingotMaterial("lithium", MaterialRegistry.REGULAR, 0xa9afac, 1) {
-            element = Elements.LITHIUM
+            element = ElementRegistry.LITHIUM
             meltingTemperature = 453
             boilingTemperature = 1603
         }
 
         BORON = ingotMaterial("boron", MaterialRegistry.SHINY, 0x727272, 1) {
-            element = Elements.BORON
+            element = ElementRegistry.BORON
             meltingTemperature = 2349
             boilingTemperature = 4200
         }
         CARBON = ingotMaterial("carbon", MaterialRegistry.REGULAR, 0x474747, 1) {
-            element = Elements.CARBON
+            element = ElementRegistry.CARBON
             meltingTemperature = 3915
             boilingTemperature = 3915
         }
         NITROGEN = transitionMaterial("nitrogen", { NITROGEN_GAS!! }, 2) {
-            element = Elements.NITROGEN
+            element = ElementRegistry.NITROGEN
         }
         NITROGEN_GAS = fluidMaterial("nitrogen_gas", MaterialRegistry.FLUID_TT, 0x8f8fff) {
             materialTags += IS_GAS
-            element = Elements.NITROGEN
+            element = ElementRegistry.NITROGEN
         }
         OXYGEN = transitionMaterial("oxygen", { OXYGEN_GAS!! }, 2) {
-            element = Elements.OXYGEN
+            element = ElementRegistry.OXYGEN
         }
         OXYGEN_GAS = fluidMaterial("oxygen_gas", MaterialRegistry.FLUID_TT, 0x56badd) {
             materialTags += IS_GAS
             composition = listOf(MaterialStack(OXYGEN, 2))
         }
         FLUORINE = transitionMaterial("fluorine", { FLUORINE_GAS!! }, 2) {
-            element = Elements.FLUORINE
+            element = ElementRegistry.FLUORINE
         }
         FLUORINE_GAS = fluidMaterial("fluorine_gas", MaterialRegistry.FLUID_TT, 0xdee67f) {
             materialTags += IS_GAS
-            element = Elements.FLUORINE
+            element = ElementRegistry.FLUORINE
         }
         NEON = fluidMaterial("neon", MaterialRegistry.FLUID_TT, 0xb3e3f5) {
             materialTags += IS_GAS
-            element = Elements.NEON
+            element = ElementRegistry.NEON
         }
         SODIUM = ingotMaterial("sodium", MaterialRegistry.SHINY, 0x525252, 1) {
-            element = Elements.SODIUM
+            element = ElementRegistry.SODIUM
             meltingTemperature = 371
             boilingTemperature = 1156
         }
         MAGNESIUM = ingotMaterial("magnesium", MaterialRegistry.SHINY, 0x8a8a8a, 1) {
-            element = Elements.MAGNESIUM
+            element = ElementRegistry.MAGNESIUM
             meltingTemperature = 923
             boilingTemperature = 1363
         }
         ALUMINIUM = ingotMaterial("aluminium", MaterialRegistry.REGULAR, 0x96a4b0, 1) {
             secondName = "aluminum"
-            element = Elements.ALUMINUM
+            element = ElementRegistry.ALUMINUM
             meltingTemperature = 933
             boilingTemperature = 2743
         }
         SILICON = ingotMaterial("silicon", MaterialRegistry.REGULAR, 0x121315, 1) {
-            element = Elements.SILICON
+            element = ElementRegistry.SILICON
             meltingTemperature = 1687
             boilingTemperature = 3538
         }
         PHOSPHORUS = dustMaterial("phosphorus", MaterialRegistry.FINE, 0xf50b0b, 1) {
-            element = Elements.PHOSPHORUS
+            element = ElementRegistry.PHOSPHORUS
         }
         SULFUR = dustMaterial("sulfur", MaterialRegistry.FINE, 0xfff70c, 1) {
-            element = Elements.SULFUR
+            element = ElementRegistry.SULFUR
         }
 
         COPPER = ingotMaterial("copper", MaterialRegistry.SHINY, 0xca7966, 1) {
-            element = Elements.COPPER
+            element = ElementRegistry.COPPER
             meltingTemperature = 1358
             boilingTemperature = 2835
         }

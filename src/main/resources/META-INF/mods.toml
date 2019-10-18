@@ -2,24 +2,24 @@ modLoader="javafml"
 loaderVersion="[28,)"
 issueTrackerURL="https://github.com/novumscientiateam/NovumScientia/issues"
 [[mods]]
-modId="novumscientia"
+modId="scientianova"
 version="${file.jarVersion}"
-displayName="Novum Scientia"
-authors="TheEmosewaPixel, Bartz24, MrBysco, gerb82, cipherzerox"
+displayName="Scientia Nova"
+authors="TheEmosewaPixel, Bartz24, gerb82, BloodAsp"
 description="A large scale tech mod for 1.14+ with the goal of large scale automation"
-[[dependencies.novumscientia]]
+[[dependencies.scientianova]]
     modId="forge"
     mandatory=true
     versionRange="[28,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.novumscientia]]
+[[dependencies.scientianova]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.14.4]"
     ordering="NONE"
     side="BOTH"
-[[dependencies.novumscientia]]
+[[dependencies.scientianova]]
     modId="pixellib"
     mandatory=true
     versionRange="[1.0.7,)"

@@ -15,7 +15,7 @@ apply plugin: 'kotlin'
 apply plugin: 'maven-publish'
 
 version = "$mc_version-$mod_version"
-group = 'com.novumscientiateam.novumscientia'
+group = 'com.scientianovateam.scientianova'
 archivesBaseName = 'novumscientia'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'

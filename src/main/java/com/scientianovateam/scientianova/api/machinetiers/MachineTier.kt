@@ -1,4 +1,4 @@
-package com.novumscientiateam.novumscientia.api.machinetiers
+package com.scientianovateam.scientianova.api.machinetiers
 
 
 import com.emosewapixel.pixellib.materialsystem.materials.Material

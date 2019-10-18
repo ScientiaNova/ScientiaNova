@@ -1,4 +1,4 @@
-package com.novumscientiateam.novumscientia.api.materialproperties.transfer
+package com.scientianovateam.scientianova.api.materialproperties.transfer
 
 import com.emosewapixel.pixellib.materialsystem.materials.Material
 
