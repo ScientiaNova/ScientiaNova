@@ -1,7 +1,7 @@
 package com.scientianovateam.scientianova.api.machinetiers
 
 
-import com.emosewapixel.pixellib.materialsystem.materials.Material
+import com.emosewapixel.pixellib.materialsystem.main.Material
 
 class MachineTier(override val name: String,
                   val energyPerTick: Int,

@@ -1,20 +1,14 @@
 package com.scientianovateam.scientianova.registry
 
-import com.emosewapixel.pixellib.materialsystem.addition.*
-import com.emosewapixel.pixellib.materialsystem.addition.BaseMaterials.HAS_ORE
-import com.emosewapixel.pixellib.materialsystem.addition.BaseMaterials.IS_GAS
-import com.emosewapixel.pixellib.materialsystem.elements.BaseElements
-import com.emosewapixel.pixellib.materialsystem.materials.IngotMaterial
-import com.emosewapixel.pixellib.materialsystem.materials.Material
+import com.emosewapixel.pixellib.materialsystem.addition.BaseElements
+import com.emosewapixel.pixellib.materialsystem.addition.BaseMaterials
+import com.emosewapixel.pixellib.materialsystem.addition.BaseTextureTypes
+import com.emosewapixel.pixellib.materialsystem.annotations.MaterialRegistry
+import com.emosewapixel.pixellib.materialsystem.builders.*
+import com.emosewapixel.pixellib.materialsystem.main.Material
 
 @MaterialRegistry
 object NSBaseMaterials {
-    //Material Tags
-    const val DECOMPOSABLE = "decomposable"
-    const val DISABLE_FACTORY_COMPONENTS = "disable_factory_components"
-    const val NOT_REACTIVE = "not_reactive"
-    const val SUPER_ORE = "super_ore"
-
     //Element Materials
     @JvmField
     val HYDROGEN: Material
@@ -150,118 +144,147 @@ object NSBaseMaterials {
 
 
     init {
-        HYDROGEN = transitionMaterial("hydrogen", { HYDROGEN_GAS!! }, 2) {
+        HYDROGEN = transitionMaterial("hydrogen", 2, { HYDROGEN_GAS!! }) {
             element = BaseElements.HYDROGEN
         }
 
-        HYDROGEN_GAS = fluidMaterial("hydrogen_gas", BaseMaterials.FLUID_TT, 0x31219e) {
-            materialTags += IS_GAS
+        HYDROGEN_GAS = fluidMaterial("hydrogen_gas") {
+            isGas = true
+            color = 0x31219e
             composition = listOf(HYDROGEN * 2)
         }
-        DEUTERIUM = transitionMaterial("deuterium", { DEUTERIUM_GAS!! }, 2) {
+        DEUTERIUM = transitionMaterial("deuterium", 2, { DEUTERIUM_GAS!! }) {
             element = BaseElements.DEUTERIUM
         }
-        DEUTERIUM_GAS = fluidMaterial("deuterium_gas", BaseMaterials.FLUID_TT, 0xfffdbf) {
-            materialTags += IS_GAS
+        DEUTERIUM_GAS = fluidMaterial("deuterium_gas") {
+            isGas = true
+            color = 0xfffdbf
             composition = listOf(DEUTERIUM * 2)
         }
-        TRITIUM = transitionMaterial("tritium", { TRITIUM_GAS!! }, 2) {
+        TRITIUM = transitionMaterial("tritium", 2, { TRITIUM_GAS!! }) {
             element = BaseElements.DEUTERIUM
         }
-        TRITIUM_GAS = fluidMaterial("tritium_gas", BaseMaterials.FLUID_TT, 0xfffc9e) {
-            materialTags += IS_GAS
+        TRITIUM_GAS = fluidMaterial("tritium_gas") {
+            isGas = true
+            color = 0xfffc9e
             composition = listOf(TRITIUM * 2)
         }
-        HELIUM = fluidMaterial("helium", BaseMaterials.FLUID_TT, 0xeebe21) {
-            materialTags += IS_GAS
+        HELIUM = fluidMaterial("helium") {
+            isGas = true
+            color = 0xeebe21
             element = BaseElements.HELIUM
         }
-        HELIUM_3 = fluidMaterial("helium_3", BaseMaterials.FLUID_TT, 0xf60d0b) {
-            materialTags += IS_GAS
+        HELIUM_3 = fluidMaterial("helium_3") {
+            isGas = true
+            color = 0xf60d0b
             element = BaseElements.HELIUM_3
         }
-        LITHIUM = ingotMaterial("lithium", BaseMaterials.REGULAR, 0xa9afac, 1) {
+        LITHIUM = ingotMaterial("lithium") {
+            color = 0xa9afac
             element = BaseElements.LITHIUM
-            meltingTemperature = 453
+            fluidTemperature = 453
             boilingTemperature = 1603
         }
 
-        BORON = ingotMaterial("boron", BaseMaterials.SHINY, 0x727272, 1) {
+        BORON = ingotMaterial("boron") {
+            color = 0x727272
+            textureType = BaseTextureTypes.SHINY
             element = BaseElements.BORON
-            meltingTemperature = 2349
+            fluidTemperature = 2349
             boilingTemperature = 4200
         }
-        CARBON = ingotMaterial("carbon", BaseMaterials.REGULAR, 0x474747, 1) {
+        CARBON = ingotMaterial("carbon") {
+            color = 0x474747
             element = BaseElements.CARBON
-            meltingTemperature = 3915
+            fluidTemperature = 3915
             boilingTemperature = 3915
         }
-        NITROGEN = transitionMaterial("nitrogen", { NITROGEN_GAS!! }, 2) {
+        NITROGEN = transitionMaterial("nitrogen", 2, { NITROGEN_GAS!! }) {
             element = BaseElements.NITROGEN
         }
-        NITROGEN_GAS = fluidMaterial("nitrogen_gas", BaseMaterials.FLUID_TT, 0x8f8fff) {
-            materialTags += IS_GAS
+        NITROGEN_GAS = fluidMaterial("nitrogen_gas") {
+            isGas = true
+            color = 0x8f8fff
             element = BaseElements.NITROGEN
         }
-        OXYGEN = transitionMaterial("oxygen", { OXYGEN_GAS!! }, 2) {
+        OXYGEN = transitionMaterial("oxygen", 2, { OXYGEN_GAS!! }) {
             element = BaseElements.OXYGEN
         }
-        OXYGEN_GAS = fluidMaterial("oxygen_gas", BaseMaterials.FLUID_TT, 0x56badd) {
-            materialTags += IS_GAS
+        OXYGEN_GAS = fluidMaterial("oxygen_gas") {
+            isGas = true
+            color = 0x56badd
             composition = listOf(OXYGEN * 2)
         }
-        FLUORINE = transitionMaterial("fluorine", { FLUORINE_GAS!! }, 2) {
+        FLUORINE = transitionMaterial("fluorine", 2, { FLUORINE_GAS!! }) {
             element = BaseElements.FLUORINE
         }
-        FLUORINE_GAS = fluidMaterial("fluorine_gas", BaseMaterials.FLUID_TT, 0xdee67f) {
-            materialTags += IS_GAS
+        FLUORINE_GAS = fluidMaterial("fluorine_gas") {
+            isGas = true
+            color = 0xdee67f
             element = BaseElements.FLUORINE
         }
-        NEON = fluidMaterial("neon", BaseMaterials.FLUID_TT, 0xb3e3f5) {
-            materialTags += IS_GAS
+        NEON = fluidMaterial("neon") {
+            isGas = true
+            color = 0xb3e3f5
             element = BaseElements.NEON
         }
-        SODIUM = ingotMaterial("sodium", BaseMaterials.SHINY, 0x525252, 1) {
+        SODIUM = ingotMaterial("sodium") {
+            color = 0x525252
+            textureType = BaseTextureTypes.SHINY
             element = BaseElements.SODIUM
-            meltingTemperature = 371
+            fluidTemperature = 371
             boilingTemperature = 1156
         }
-        MAGNESIUM = ingotMaterial("magnesium", BaseMaterials.SHINY, 0x8a8a8a, 1) {
+        MAGNESIUM = ingotMaterial("magnesium") {
+            color = 0x8a8a8a
+            textureType = BaseTextureTypes.SHINY
             element = BaseElements.MAGNESIUM
-            meltingTemperature = 923
+            fluidTemperature = 923
             boilingTemperature = 1363
         }
-        ALUMINIUM = ingotMaterial("aluminium", BaseMaterials.REGULAR, 0x96a4b0, 1) {
+        ALUMINIUM = ingotMaterial("aluminium") {
+            color = 0x96a4b0
             secondName = "aluminum"
             element = BaseElements.ALUMINUM
-            meltingTemperature = 933
+            fluidTemperature = 933
             boilingTemperature = 2743
         }
-        SILICON = ingotMaterial("silicon", BaseMaterials.REGULAR, 0x121315, 1) {
+        SILICON = ingotMaterial("silicon") {
+            color = 0x121315
             element = BaseElements.SILICON
-            meltingTemperature = 1687
+            fluidTemperature = 1687
             boilingTemperature = 3538
         }
-        PHOSPHORUS = dustMaterial("phosphorus", BaseMaterials.FINE, 0xf50b0b, 1) {
+        PHOSPHORUS = dustMaterial("phosphorus") {
+            color = 0xf50b0b
+            textureType = BaseTextureTypes.FINE
             element = BaseElements.PHOSPHORUS
         }
-        SULFUR = dustMaterial("sulfur", BaseMaterials.FINE, 0xfff70c, 1) {
+        SULFUR = dustMaterial("sulfur") {
+            color = 0xfff70c
+            textureType = BaseTextureTypes.FINE
             element = BaseElements.SULFUR
         }
 
-        COPPER = ingotMaterial("copper", BaseMaterials.SHINY, 0xca7966, 1) {
+        COPPER = ingotMaterial("copper") {
+            color = 0xca7966
+            textureType = BaseTextureTypes.SHINY
             element = BaseElements.COPPER
-            meltingTemperature = 1358
+            fluidTemperature = 1358
             boilingTemperature = 2835
         }
 
 
-        SULFUR_DIOXIDE = fluidMaterial("sulfur_dioxide", BaseMaterials.FLUID_TT, 0xf8d34d) {
-            materialTags += listOf(IS_GAS, DECOMPOSABLE)
+        SULFUR_DIOXIDE = fluidMaterial("sulfur_dioxide") {
+            color = 0xf8d34d
+            isGas = true
+            isSeparable = true
             composition = listOf(SULFUR * 1, OXYGEN_GAS!! * 1)
         }
-        SILICON_MONOXIDE = dustMaterial("silicon_monoxide", BaseMaterials.FINE, 0x2b2b2a, 1) {
-            materialTags += DECOMPOSABLE
+        SILICON_MONOXIDE = dustMaterial("silicon_monoxide") {
+            color = 0x2b2b2a
+            textureType = BaseTextureTypes.FINE
+            isSeparable = true
             composition = listOf(SILICON * 1, OXYGEN * 1)
         }
 
@@ -280,47 +303,61 @@ object NSBaseMaterials {
         }
 
 
-        MAGNETITE = dustMaterial("magnetite", BaseMaterials.FINE, 0x1f1e1c, 1) {
-            materialTags += HAS_ORE
-            refinedMaterial = BaseMaterials.IRON as IngotMaterial
+        MAGNETITE = dustMaterial("magnetite") {
+            hasOre = true
+            color = 0x1f1e1c
+            textureType = BaseTextureTypes.FINE
+            refinedMaterial = BaseMaterials.IRON
             composition = listOf(BaseMaterials.IRON * 3, OXYGEN_GAS!! * 2)
         }
-        HEMATITE = dustMaterial("hematite", BaseMaterials.FINE, 0x444138, 1) {
-            materialTags += HAS_ORE
-            refinedMaterial = BaseMaterials.IRON as IngotMaterial
+        HEMATITE = dustMaterial("hematite") {
+            hasOre = true
+            color = 0x444138
+            textureType = BaseTextureTypes.FINE
+            refinedMaterial = BaseMaterials.IRON
             composition = listOf(BaseMaterials.IRON * 2, OXYGEN * 3)
         }
-        PYRITE = dustMaterial("pyrite", BaseMaterials.FINE, 0xc0a368, 1) {
-            materialTags += HAS_ORE
-            refinedMaterial = BaseMaterials.IRON as IngotMaterial
+        PYRITE = dustMaterial("pyrite") {
+            hasOre = true
+            color = 0xc0a368
+            textureType = BaseTextureTypes.FINE
+            refinedMaterial = BaseMaterials.IRON
             composition = listOf(BaseMaterials.IRON * 1, SULFUR * 2)
         }
-        CHALCOPYRITE = dustMaterial("chalcopyrite", BaseMaterials.FINE, 0x9d8851, 1) {
-            materialTags += HAS_ORE
-            refinedMaterial = COPPER as IngotMaterial
+        CHALCOPYRITE = dustMaterial("chalcopyrite") {
+            hasOre = true
+            color = 0x9d8851
+            textureType = BaseTextureTypes.FINE
+            refinedMaterial = COPPER
             composition = listOf(COPPER * 1, BaseMaterials.IRON * 1, SULFUR * 1)
         }
-        CHALCOCITE = dustMaterial("chalcocite", BaseMaterials.FINE, 0xa1ba81, 1) {
-            materialTags += HAS_ORE
-            refinedMaterial = COPPER as IngotMaterial
+        CHALCOCITE = dustMaterial("chalcocite") {
+            hasOre = true
+            color = 0xa1ba81
+            textureType = BaseTextureTypes.FINE
+            refinedMaterial = COPPER
             composition = listOf(COPPER * 2, SULFUR * 1)
         }
-        CUPRITE = dustMaterial("cuprite", BaseMaterials.FINE, 0x458a77, 1) {
-            materialTags += HAS_ORE
-            refinedMaterial = COPPER as IngotMaterial
+        CUPRITE = dustMaterial("cuprite") {
+            hasOre = true
+            color = 0x458a77
+            textureType = BaseTextureTypes.FINE
+            refinedMaterial = COPPER
             composition = listOf(COPPER * 2, OXYGEN * 1)
         }
 
 
-        KAOLINITE = dustMaterial("kaolinite", BaseMaterials.FINE, 0xe7c9c0, 1) {
+        KAOLINITE = dustMaterial("kaolinite") {
+            color = 0xe7c9c0
+            isSeparable = true
+            textureType = BaseTextureTypes.FINE
             composition = listOf(ALUMINIUM * 2, SILICON * 2, OXYGEN * 5, HYDROXIDE * 4)
-            materialTags += DECOMPOSABLE
         }
 
 
-        BaseMaterials.BRICK.materialTags += DISABLE_FACTORY_COMPONENTS
-        BaseMaterials.NETHER_BRICK.materialTags += DISABLE_FACTORY_COMPONENTS
-        BaseMaterials.DIAMOND.materialTags += NOT_REACTIVE
+        BaseMaterials.BRICK.hasFactoryComponents = false
+        BaseMaterials.NETHER_BRICK.hasFactoryComponents = false
+        BaseMaterials.DIAMOND.isReactive = false
         BaseMaterials.WATER.composition = listOf(HYDROGEN_GAS!! * 1, OXYGEN * 1)
         BaseMaterials.QUARTZ.composition = listOf(SILICON * 1, OXYGEN_GAS!! * 1)
     }

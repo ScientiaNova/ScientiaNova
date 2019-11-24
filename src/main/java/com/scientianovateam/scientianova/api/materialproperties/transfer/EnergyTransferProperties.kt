@@ -1,6 +1,6 @@
 package com.scientianovateam.scientianova.api.materialproperties.transfer
 
-import com.emosewapixel.pixellib.materialsystem.materials.Material
+import com.emosewapixel.pixellib.materialsystem.main.Material
 
 import java.util.HashMap
 
