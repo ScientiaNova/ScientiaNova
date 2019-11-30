@@ -6,6 +6,7 @@ import com.emosewapixel.pixellib.materialsystem.addition.BaseTextureTypes
 import com.emosewapixel.pixellib.materialsystem.annotations.MaterialRegistry
 import com.emosewapixel.pixellib.materialsystem.builders.*
 import com.emosewapixel.pixellib.materialsystem.main.Material
+import com.emosewapixel.pixellib.materialsystem.properties.TransitionProperties
 
 @MaterialRegistry
 object NSBaseMaterials {
@@ -144,7 +145,8 @@ object NSBaseMaterials {
 
 
     init {
-        HYDROGEN = transitionMaterial("hydrogen", 2, { HYDROGEN_GAS!! }) {
+        HYDROGEN = material("hydrogen") {
+            transitionProperties = TransitionProperties(2) { HYDROGEN_GAS!! }
             element = BaseElements.HYDROGEN
         }
 
@@ -153,7 +155,8 @@ object NSBaseMaterials {
             color = 0x31219e
             composition = listOf(HYDROGEN * 2)
         }
-        DEUTERIUM = transitionMaterial("deuterium", 2, { DEUTERIUM_GAS!! }) {
+        DEUTERIUM = material("deuterium") {
+            transitionProperties = TransitionProperties(2) { DEUTERIUM_GAS!! }
             element = BaseElements.DEUTERIUM
         }
         DEUTERIUM_GAS = fluidMaterial("deuterium_gas") {
@@ -161,7 +164,8 @@ object NSBaseMaterials {
             color = 0xfffdbf
             composition = listOf(DEUTERIUM * 2)
         }
-        TRITIUM = transitionMaterial("tritium", 2, { TRITIUM_GAS!! }) {
+        TRITIUM = material("tritium") {
+            transitionProperties = TransitionProperties(2) { TRITIUM_GAS!! }
             element = BaseElements.DEUTERIUM
         }
         TRITIUM_GAS = fluidMaterial("tritium_gas") {
@@ -199,7 +203,8 @@ object NSBaseMaterials {
             fluidTemperature = 3915
             boilingTemperature = 3915
         }
-        NITROGEN = transitionMaterial("nitrogen", 2, { NITROGEN_GAS!! }) {
+        NITROGEN = material("nitrogen") {
+            transitionProperties = TransitionProperties(2) { NITROGEN_GAS!! }
             element = BaseElements.NITROGEN
         }
         NITROGEN_GAS = fluidMaterial("nitrogen_gas") {
@@ -207,7 +212,8 @@ object NSBaseMaterials {
             color = 0x8f8fff
             element = BaseElements.NITROGEN
         }
-        OXYGEN = transitionMaterial("oxygen", 2, { OXYGEN_GAS!! }) {
+        OXYGEN = material("oxygen") {
+            transitionProperties = TransitionProperties(2) { OXYGEN_GAS!! }
             element = BaseElements.OXYGEN
         }
         OXYGEN_GAS = fluidMaterial("oxygen_gas") {
@@ -215,7 +221,8 @@ object NSBaseMaterials {
             color = 0x56badd
             composition = listOf(OXYGEN * 2)
         }
-        FLUORINE = transitionMaterial("fluorine", 2, { FLUORINE_GAS!! }) {
+        FLUORINE = material("fluorine") {
+            transitionProperties = TransitionProperties(2) { FLUORINE_GAS!! }
             element = BaseElements.FLUORINE
         }
         FLUORINE_GAS = fluidMaterial("fluorine_gas") {
@@ -242,9 +249,8 @@ object NSBaseMaterials {
             fluidTemperature = 923
             boilingTemperature = 1363
         }
-        ALUMINIUM = ingotMaterial("aluminium") {
+        ALUMINIUM = ingotMaterial("aluminium", "aluminum") {
             color = 0x96a4b0
-            secondName = "aluminum"
             element = BaseElements.ALUMINUM
             fluidTemperature = 933
             boilingTemperature = 2743
